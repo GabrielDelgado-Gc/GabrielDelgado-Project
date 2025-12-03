@@ -1,0 +1,48 @@
+<%-include('../cabecalho.ejs')%>
+
+         <header>
+        <h3>Editar </h3>
+      </header>
+      <div class="content">
+        <form id="form-instrumento" method="post" autocomplete="off" >
+          <div class="grid">
+            <div>
+              <label for="id">ID da Lane</label>
+              <input id="id" value="<%=lane.id%>" name="id" type="text" placeholder="Ex:Id" required>
+            </div>
+            
+                <label for="tipo">Nome da Lane</label>
+              <select id="marca" name="nomeLa" required>
+                <option value="" disabled selected>Selecione qual a Lane</option>
+                <option>TopLane</option>
+                <option>MidLane</option>
+                <option>BotLane</option>
+              </select>
+
+                <label for="tipo">Tipo De Lane</label>
+              <select id="marca" name="tipoDeLane" required>
+                <option value="" disabled selected>Selecione o Tipo da Lane</option>
+                <option>Hc Lane</option>
+                <option>End game</option>
+                <option>Fight Lane</option>
+              </select>
+
+                <label for="tipo">Tipo De Farm</label>
+              <select id="marca" name="tipoDeFarm" required>
+                <option value="" disabled selected>Selecione o Tipo de Farm</option>
+                <option>Lane Farma no Gank</option>
+                <option>Lane que Farma com Creeps</option>
+                <option>Lane que Farma com mortes de Heróis</option>
+              </select>
+
+            <label for="herois">Heróis presentes nessa Lane</label>
+            <input id="cidade" name="heroisPresentes" type="text" placeholder="<%=lane.heroisPresentes%>" required>   
+
+          </div>
+          <footer>
+            <a type="button" class="btn ghost" id="btn-cancelar" href="/lanes/lst">Cancelar</a>
+            <button type="submit" class="btn primary">Editar Lane</button>
+          </footer>
+        </form>
+      </div>
+<%-include('../rodape.ejs')%>

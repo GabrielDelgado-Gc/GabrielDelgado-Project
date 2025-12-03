@@ -1,0 +1,49 @@
+     <%-include('../cabecalho.ejs')%>
+     <header>
+        <h3>Adicionar um Novo Herói</h3>
+      </header>
+      <div class="content">
+        <form id="form-instrumento"  method="post" enctype="multipart/form-data" autocomplete="off" action="/herois/add/ok">
+          <div class="grid">
+            <div>
+              <label for="nome">Nome do Herói</label>
+              <input id="nome" name="nome" type="text" placeholder="Digite o nome do herois" required>
+            </div>
+            <div>
+              <label for="elemento">Elemento</label>
+              <select id="marca" name="elemento" required>
+                <option value="" disabled selected>Selecione o elemento</option>
+                <option>Força</option>
+                <option>Agilidade</option>
+                <option>Inteligencia</option>
+                <option>Universal</option>
+              </select>
+            </div>
+            <div>
+              <label for="posicao">Posição</label>
+              <select id="tipo" name="posicao" required>
+                <option value="" disabled selected>Selecione uma Posição</option>
+                <option>TopLane</option>
+                <option>MidLane</option>
+                <option>BotLane</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="habilidades">Habilidades</label>
+              <input id="nome" name="habilidades" type="text" placeholder="Digite as habilidades" required>
+            </div>
+
+            <div>
+              <label for="image">Imagem do Herói</label>
+              <input id="image" name="image" type="file" placeholder="Mande a foto">
+            </div>
+
+          <footer>
+            <a type="button" class="btn ghost" id="btn-cancelar" href="/herois/lst">Cancelar</a>
+            <button type="submit" class="btn primary">Adicionar Herói</button>
+          </footer>
+        </form>
+      </div>
+
+      <%-include('../rodape.ejs')%>

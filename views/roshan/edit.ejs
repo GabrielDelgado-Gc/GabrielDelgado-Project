@@ -1,0 +1,44 @@
+<%-include('../cabecalho.ejs')%>
+
+         <header>
+        <h3>Editar </h3>
+      </header>
+      <div class="content">
+        <form id="form-instrumento" method="post" autocomplete="off" >
+          <div class="grid">
+            <div>
+              <label for="id">ID da Lane</label>
+              <input id="id" value="<%=roshan.id%>" name="id" type="text" placeholder="Ex:Id" required>
+            </div>
+            
+                <label for="cidade">Dano do Roshan</label>
+                <input id="cidade" name="dano" type="text" placeholder="<%=roshan.dano%>" required>
+
+                <label for="tipo">Local que o Roshan está</label>
+              <select id="marca" name="local" required>
+                <option value="" disabled selected>Selecione local</option>
+                <option>Encima</option>
+                <option>Embaixo</option>
+              </select>
+
+                <label for="cidade">Vida do Roshan</label>
+                <input id="cidade" name="vida" type="text" placeholder="<%=roshan.vida%>" required>
+
+                     <label for="tipo">Itens que ele dropa</label>
+              <select id="marca" name="itensEspecial" required>
+                <option value="" disabled selected>Selecione um item</option>
+                <option>Égide do Imortal</option>
+                <option>Queijo</option>
+                <option>Estandarte de Roshan</option>
+                <option>A Bênção de Aghanim - Roshan</option>
+                <option> Fragmento de Renovação</option>
+              </select>
+
+          </div>
+          <footer>
+            <a type="button" class="btn ghost" id="btn-cancelar" href="/roshan/lst">Cancelar</a>
+            <button type="submit" class="btn primary">Editar Roshan</button>
+          </footer>
+        </form>
+      </div>
+<%-include('../rodape.ejs')%>

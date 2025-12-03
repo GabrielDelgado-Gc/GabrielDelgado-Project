@@ -1,0 +1,33 @@
+<%-include('../cabecalho.ejs')%>
+  <header>
+    <h3>Adicionar Novo Time</h3>
+  </header>
+  <div class="content">
+    <form id="form-instrumento" method="post" autocomplete="off" action="/itens/add/ok">
+      <div class="grid">
+        <div>
+       <label for="time">Nome do Item</label>
+<input id="time" name="nomeIt" type="text" placeholder="Ex: Olho de Skaddi" required>
+
+              <label for="tipo">Tipo</label>
+              <select id="marca" name="tipo" required>
+                <option value="" disabled selected>Selecione o Tipo do item</option>
+                <option>Consumivel</option>
+                <option>Passivo</option>
+                <option>Ativavel</option>
+              </select>
+
+<label for="cidade">Preço do Item</label>
+<input id="cidade" name="preco" type="text" placeholder="Preço." required>
+
+<label for="cidade">Efeito do Item</label>
+<input id="cidade" name="efeito" type="text" placeholder="Qual efeito ele tem." required>
+
+        <footer>
+          <a type="button" class="btn ghost" id="btn-cancelar" href="/itens/lst">Cancelar</a>
+          <button type="submit" method="post" class="btn primary">Adicionar Item</button>
+        </footer>
+    </form>
+  </div>
+
+  <%-include('../rodape.ejs')%>

@@ -1,0 +1,43 @@
+<%-include('../cabecalho.ejs')%>
+  <header>
+    <h3>Adicionar Novo Time</h3>
+  </header>
+  <div class="content">
+    <form id="form-instrumento" method="post" autocomplete="off" action="/lanes/add/ok">
+      <div class="grid">
+        <div>
+              <label for="tipo">Nome da Lane</label>
+              <select id="marca" name="nomeLa" required>
+                <option value="" disabled selected>Selecione qual a Lane</option>
+                <option>TopLane</option>
+                <option>MidLane</option>
+                <option>BotLane</option>
+              </select>
+
+              <label for="tipo">Tipo De Lane</label>
+              <select id="marca" name="tipoDeLane" required>
+                <option value="" disabled selected>Selecione o Tipo da Lane</option>
+                <option>Hc Lane</option>
+                <option>End game</option>
+                <option>Fight Lane</option>
+              </select>
+
+              <label for="tipo">Tipo De Farm</label>
+              <select id="marca" name="tipoDeFarm" required>
+                <option value="" disabled selected>Selecione o Tipo de Farm</option>
+                <option>Lane Farma no Gank</option>
+                <option>Lane que Farma com Creeps</option>
+                <option>Lane que Farma com mortes de Heróis</option>
+              </select>
+
+                <label for="cidade">Heróis presentes nessa Lane</label>
+                <input id="cidade" name="heroisPresentes" type="text" placeholder="Digite um Herói" required>
+
+        <footer>
+          <a type="button" class="btn ghost" id="btn-cancelar" href="/lanes/lst">Cancelar</a>
+          <button type="submit" method="post" class="btn primary">Adicionar Lane</button>
+        </footer>
+    </form>
+  </div>
+
+  <%-include('../rodape.ejs')%>

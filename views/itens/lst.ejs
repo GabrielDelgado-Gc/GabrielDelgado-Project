@@ -1,0 +1,107 @@
+<%-include('../cabecalho.ejs')%>
+<section class="section">
+  <div style="display:flex; align-items:end; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+    <div>
+      <h2>Itens</h2>
+      <p>Gerencie seus Itens</p>
+    </div>
+    <div class="actions">
+      <a href="/itens/add" class="btn primary">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H6a1 1 0 110-2h5V6a1 1 0 011-1z"/></svg>
+        Adicionar Item
+      </a>
+    </div>
+  </div>
+   <!--Formulário de pesquisa-->
+<div style="flex: 0 0 auto; width: 70%;">
+<form action="" method="post">
+<input type="text" name="pesquisa" id="" placeholder="digite a pesquisa aqui">
+<button type="submit" class="icon-btn" title="Editar" aria-label="Editar">
+<!--isso aqui é o desenho de uma lupa-->
+
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-
+linejoin="round">
+
+<circle cx="11" cy="11" r="8"/>
+<line x1="21" y1="21" x2="16.65" y2="16.65"/>
+</svg>
+<!--terminou-->
+</button>
+</form>
+</div>
+<!--fim do formulário de pesquisa-->
+
+
+  <div class="table-wrap" style="margin-top:14px;">
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Preço</th>
+          <th>Efeito</th>
+          
+          <th class="actions-cell">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+                <%itens.forEach(item=>{%>
+        <tr>
+          <td><%=item.nomeIt%></td>
+          <td><%=item.tipo%></td>
+          <td><%=item.preco%></td>
+          <td><%=item.efeito%></td>
+          <td class="actions-cell">
+            <a href="/itens/edit/<%=item.id%>"  class="icon-btn" title="Editar" aria-label="Editar">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+            </a>
+           <a href="/itens/del/<%=item.id%>" class="icon-btn" title="Excluir" aria-label="Excluir" >
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+            </a>
+          </td>
+                <% })%> 
+        </tr>    
+      </tbody>
+    </table>
+  </div>
+</section>
+
+ <style>
+  form {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  form input[type="text"] {
+    flex: 1;
+    padding: 8px 12px 8px 36px; /* espaço à esquerda pro ícone */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  form .icon-btn {
+    position: absolute;
+    left: 10px; /* posiciona a lupa à esquerda dentro do input */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    color: #555;
+  }
+
+  form .icon-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  form .icon-btn:hover {
+    color: #000;
+  }
+</style>
+
+<%-include('../rodape.ejs')%>

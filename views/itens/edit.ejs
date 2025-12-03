@@ -1,0 +1,39 @@
+<%-include('../cabecalho.ejs')%>
+
+         <header>
+        <h3>Editar </h3>
+      </header>
+      <div class="content">
+        <form id="form-instrumento" method="post" autocomplete="off" >
+          <div class="grid">
+            <div>
+              <label for="id">ID do Item</label>
+              <input id="id" value="<%=itens.id%>" name="id" type="text" placeholder="Ex:Id" required>
+            </div>
+            <div>
+              <label for="nome">Nome</label>
+              <input id="jogador" value="<%=itens.nomeIt%>" name="nomeIt" type="text" placeholder="Ex:Nome item" required>
+            </div>
+              <label for="tipo">Tipo</label>
+              <select id="marca" name="tipo" required>
+                <option value="" disabled selected>Selecione o Tipo do item</option>
+                <option>Consumivel</option> 
+                <option>Passivo</option>
+                <option>Ativavel</option>
+              </select>
+            <div>
+              <label for="nome">Preço</label>
+              <input id="jogador" value="<%=itens.preco%>" name="preco" type="text" placeholder="Ex:Nome item" required>
+            </div>
+            <div>
+              <label for="nome">Efeito</label>
+              <input id="jogador" value="<%=itens.efeito%>" name="efeito" type="text" placeholder="Ex:Nome item" required>
+            </div>
+          </div>
+          <footer>
+            <a type="button" class="btn ghost" id="btn-cancelar" href="/itens/lst">Cancelar</a>
+            <button type="submit" class="btn primary">Editar Item</button>
+          </footer>
+        </form>
+      </div>
+<%-include('../rodape.ejs')%>

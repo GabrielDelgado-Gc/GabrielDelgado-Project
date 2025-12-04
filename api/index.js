@@ -286,9 +286,35 @@ app.post("/roshan/lst", async (req,res) => {
        { itensEspecial: {$regex: pesquisa}}
         ]
     });
-//hhhhh3213
 
     res.render("roshan/lst", {roshan: roshan})
 })
+
+// Users View
+
+app.get("/userHerois/lst", async (req,res) =>{
+    const heroi = await Heroi.find()
+
+    res.render("userHerois/lst", {heroi})
+})
+
+app.get("/userItens/lst", async (req,res) =>{
+    const itens = await Itens.find()
+    res.render("userItens/lst", { itens }) 
+})
+
+app.get("/userLanes/lst", async (req,res)=>{
+    const lanes = await Lanes.find()
+    res.render("userLanes/lst", { lanes })
+})
+
+app.get("/userRoshan/lst", async (req,res)=>{
+    const roshan = await Roshan.find()
+    res.render("userRoshan/lst", { roshan })
+})
+
+
+
+
 
 app.listen(3000, console.log("Rodando"))
